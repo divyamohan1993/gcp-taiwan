@@ -1,7 +1,26 @@
+# Google Cloud Project Creation
+- Project number: 9649******63
+- Project ID: industrial-glow-******-i4
+
+We then explored various services provided by the Google Cloud.
+
+
+
 # Compute Engine - VM Instance - By Lakshika Tanwar
+**Prerequisite:**
+- *Creation of Google Cloud Project*
+- *Guidance from faculty and https://cloud.google.com/sdk/docs/install#deb*
+
 ---
 ## Method 1 - Using GUI
-We create the VM Instance using the GUI exploring N and E Seies machines.
+We create the VM Instance using the GUI exploring N and E Series machines. We ssh on to the Ubuntu 20.04 LTS instance we created and explored its capabilities. We also saw how to ssh to the instance directly using google console.
+
+The following code is used to ssh the vm using google cloud console with the name as VM_NAME(replace with suitable name), and zone as asia-east1-c(replace as applicable)
+```
+cloud compute ssh VM_NAME --project=replace_withyour_project_id --zone=asia-east1-c
+```
+
+We also learnt how to add startup script through GUI. 
 
 ## Method 2 - Using Google Cloud Console
 
@@ -33,13 +52,6 @@ gcloud  compute  instances list
 
 ---
 
-The following code is used to ssh the vm using google cloud console with the name as VM_NAME(replace with suitable name).
-```
-cloud compute ssh VM_NAME --project=replace_withyour_project_id --zone=asia-east1-c
-```
-
----
-
 The following command creates the instance with VM_NAME(replace with suitable name) with the image as debain intead of Ubuntu as we used above. This command has an startup sript attached which runs the repo update -. installs apache2 -> and creates a badix index.html page which can be accessed by opening vm's public ip.
 
 ```
@@ -53,3 +65,8 @@ gcloud compute instances create VM_NAME \
   <html><body><p>Linux startup script added directly.</p></body></html>
   EOF'
 ```
+
+--- 
+We were guided on how to integrate OpenAI key and make a project - https://python.langchain.com/docs/integrations/llms/openai/ which can be accessed using https://platform.openai.com/api-keys
+
+---

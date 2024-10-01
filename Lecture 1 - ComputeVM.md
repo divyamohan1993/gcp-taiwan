@@ -70,3 +70,27 @@ gcloud compute instances create VM_NAME \
 We were guided on how to integrate OpenAI key and make a project - https://python.langchain.com/docs/integrations/llms/openai/ which can be accessed using https://platform.openai.com/api-keys
 
 ---
+
+
+### Deploying a website to dynv6.net
+
+#### Using startup script from GUI
+
+While creating a VM:
+- Open advanced settings -> Network -> Add Network tags 'http-server' and 'https-server'
+- Management -> Under Automations, paste the following script.
+
+```
+#! /bin/bash
+ apt update
+ apt -y install apache2
+ cat <<EOF > /var/www/html/index.html
+ <html><body><p>Linux startup script added directly. $(hostname -I) </p></body></html>
+```
+
+Create and deploy the VM after above changes have been made.
+
+We create our account on dynv6.com. In the dashboard, we attach the external IP we get from the vm to a dynamic address that has been created by us.
+
+The website is then deployed to that custom address we created, herein, http://lakshikatanwar.dynv6.net
+

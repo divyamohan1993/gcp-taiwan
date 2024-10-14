@@ -94,3 +94,22 @@ We create our account on dynv6.com. In the dashboard, we attach the external IP 
 
 The website is then deployed to that custom address we created, herein, http://lakshikatanwar.dynv6.net
 
+#### Using buckets to hold static resources and linking it to compute instance to host directly as folder of website
+
+Linking different vm + ping them - DIY
+
+#### Creating budget for monitering credit usage with predefined scoping.
+ DIY - Give details for notes
+
+#### SSH to instance 2 from within instance 1. 
+
+We created connection between the two instances through SSH. For this example we will use  myweb1 with internal ip 10.140.0.10 (host) to access mygcp1 with 10.140.0.11 as internal ip (guest). 
+
+Steps:
+
+- Update password of root user for both instance to your password using command `sudo passwd root`. 
+- Escalate the priveledge by `su` command, i.e. enter to superuser or root user and enter the password which you just created.
+- Ping each other to confirm they can 'talk' to each other.
+- If we attemp to ssh now, it will give error as we dont have proper keys
+- 
+  

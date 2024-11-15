@@ -5,8 +5,8 @@ Google Cloud `gcloud` shell script to create an autoscaling managed instance gro
 
 # Variables
 PROJECT_ID=$(gcloud config get-value project)
-REGION="us-central1"
-ZONE="us-central1-a"
+REGION="asia-east1"
+ZONE="asia-east1-a"
 INSTANCE_GROUP_NAME="apache-autoscale-group"
 TEMPLATE_NAME="apache-template"
 LB_NAME="internal-lb"
@@ -14,16 +14,14 @@ HEALTH_CHECK_NAME="apache-health-check"
 BACKEND_SERVICE_NAME="apache-backend-service"
 
 # Step 1: Create an instance template
-gcloud compute instance-templates create $TEMPLATE_NAME \
-    --region=$REGION \
+gcloud compute instance-templates create ke-template \
+    --zone="asia-east1-a" \
     --machine-type=e2-medium \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
     --metadata=startup-script='#!/bin/bash
-      apt update
-      apt install -y apache2
-      systemctl start apache2
-      echo "<html><body><h1>Welcome to $(hostname)</h1></body></html>" > /var/www/html/index.html' \
+      sudo apt update
+      sudo apt install -y apache2
+      sudo systemctl start apache2
+      echo "<html><body><h1>Welcome to $(hostname)</h1></body></html>" | sudo tee /var/www/html/index.html > /dev/null' \
     --tags=http-server \
     --network=default \
     --no-address

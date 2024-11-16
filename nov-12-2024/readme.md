@@ -46,7 +46,8 @@ gcloud compute instance-templates create apache-template \
       sudo systemctl enable apache2
       sudo systemctl start apache2
       echo "<html><body><h1>Apache Server on $(hostname)</h1></body></html>" | sudo tee /var/www/html/index.html > /dev/null' \
-    --no-address
+    --no-address \
+    --tags=http-server
 
 
 # Step 2: Create a managed instance group

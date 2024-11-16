@@ -22,16 +22,32 @@ This guide explains how to set up a **public HTTP(S) load balancer** that expose
 ```bash
 #!/bin/bash
 
+# Step 0: Create a router for the VPC - Prerequisite else internet wont connect on instance from internal IP to download updates and apache2
+gcloud compute routers create apache-router \
+    --region=asia-east1 \
+    --network=default
+
+# Step 0: Create a Cloud NAT for the router - Prerequisite else internet wont connect on instance from internal IP
+gcloud compute routers nats create apache-nat \
+    --router=apache-router \
+    --auto-allocate-nat-external-ips \
+    --nat-all-subnet-ip-ranges \
+    --region=asia-east1
+
+
 # Step 1: Create an instance template with Apache setup (internal IP only)
 gcloud compute instance-templates create apache-template \
-    --machine-type=e2-micro \
-    --image-family=debian-11 \
-    --image-project=debian-cloud \
+    --machine-type=e2-medium \
+    --image-family=ubuntu-2204-lts \
+    --image-project=ubuntu-os-cloud \
     --metadata=startup-script='#!/bin/bash
-      apt update && apt install -y apache2
-      systemctl start apache2
-      echo "<html><body><h1>Apache Server on $(hostname)</h1></body></html>" > /var/www/html/index.html' \
+      sudo apt update
+      sudo apt install -y apache2
+      sudo systemctl enable apache2
+      sudo systemctl start apache2
+      echo "<html><body><h1>Apache Server on $(hostname)</h1></body></html>" | sudo tee /var/www/html/index.html > /dev/null' \
     --no-address
+
 
 # Step 2: Create a managed instance group
 gcloud compute instance-groups managed create apache-group \
@@ -132,6 +148,12 @@ To clean up all resources created by the setup script, use the following script:
 
 ```bash
 #!/bin/bash
+
+# Step 0: Delete the Cloud NAT - Prerequisite else internet wont connect on instance from internal IP
+gcloud compute routers nats delete apache-nat --router=apache-router --region=asia-east1 --quiet
+
+# Step 0: Delete the router - Prerequisite else internet wont connect on instance from internal IP
+gcloud compute routers delete apache-router --region=asia-east1 --quiet
 
 # Step 1: Delete the forwarding rule
 gcloud compute forwarding-rules delete apache-lb --global --quiet

@@ -41,7 +41,7 @@ gcloud compute instance-templates create apache-template \
     --image-project=ubuntu-os-cloud \
     --metadata=startup-script='#!/bin/bash
       sudo apt update
-      sudo apt install -y apache2
+      sudo apt install -y apache2 stress
       sudo systemctl enable apache2
       sudo systemctl start apache2
       echo "<html><body><h1>Apache Server on $(hostname)</h1></body></html>" | sudo tee /var/www/html/index.html > /dev/null' \
@@ -153,13 +153,7 @@ To clean up all resources created by the setup script, use the following script:
 ```bash
 #!/bin/bash
 
-# Step 0: Delete the Cloud NAT - Prerequisite else internet wont connect on instance from internal IP
-gcloud compute routers nats delete apache-nat --router=apache-router --region=asia-east1 --quiet
-
-# Step 0: Delete the router - Prerequisite else internet wont connect on instance from internal IP
-gcloud compute routers delete apache-router --region=asia-east1 --quiet
-
-# Step 1: Delete the forwarding rule
+# Step 1: Delete the global forwarding rule
 gcloud compute forwarding-rules delete apache-lb --global --quiet
 
 # Step 2: Delete the HTTP target proxy
@@ -169,10 +163,7 @@ gcloud compute target-http-proxies delete apache-http-proxy --quiet
 gcloud compute url-maps delete apache-url-map --quiet
 
 # Step 4: Remove the instance group from the backend service
-gcloud compute backend-services remove-backend apache-backend \
-    --instance-group=apache-group \
-    --instance-group-zone=asia-east1-a \
-    --global --quiet
+gcloud compute backend-services remove-backend apache-backend --instance-group=apache-group --instance-group-zone=asia-east1-a --global --quiet
 
 # Step 5: Delete the backend service
 gcloud compute backend-services delete apache-backend --global --quiet
@@ -186,7 +177,11 @@ gcloud compute instance-groups managed delete apache-group --zone=asia-east1-a -
 # Step 8: Delete the instance template
 gcloud compute instance-templates delete apache-template --quiet
 
-echo "All resources have been deleted successfully."
+# Step 9: Delete the Cloud NAT
+gcloud compute routers nats delete apache-nat --router=apache-router --region=asia-east1 --quiet
+
+# Step 10: Delete the router
+gcloud compute routers delete apache-router --region=asia-east1 --quiet
 ```
 
 ### Usage Instructions for Deletion:

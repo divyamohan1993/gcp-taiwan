@@ -34,7 +34,6 @@ gcloud compute routers nats create apache-nat \
     --nat-all-subnet-ip-ranges \
     --region=asia-east1
 
-
 # Step 1: Create an instance template with Apache setup (internal IP only)
 gcloud compute instance-templates create apache-template \
     --machine-type=e2-medium \
@@ -49,24 +48,28 @@ gcloud compute instance-templates create apache-template \
     --no-address \
     --tags=http-server
 
-
 # Step 2: Create a managed instance group
 gcloud compute instance-groups managed create apache-group \
     --template=apache-template \
     --size=1 \
     --zone=asia-east1-a
 
-# Step 3: Set up autoscaling
+# Step 3: Set up autoscaling with a cool-down period
 gcloud compute instance-groups managed set-autoscaling apache-group \
     --zone=asia-east1-a \
     --min-num-replicas=1 \
     --max-num-replicas=5 \
-    --target-cpu-utilization=0.6
+    --target-cpu-utilization=0.6 \
+    --cool-down-period=120
 
-# Step 4: Create a health check (HTTP for external load balancer)
+# Step 4: Create a health check with adjusted timeouts
 gcloud compute health-checks create http apache-health-check \
     --request-path="/" \
-    --port=80
+    --port=80 \
+    --check-interval=10 \
+    --timeout=5 \
+    --unhealthy-threshold=3 \
+    --healthy-threshold=2
 
 # Step 5: Create a backend service for the load balancer
 gcloud compute backend-services create apache-backend \

@@ -1,0 +1,415 @@
+    1  gcloud compute instances create myvm1 --project=industrial-glow-437012-i4 --zone=asia-east1-c --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --maintenance-policy=MIGRATE --provisioning-model=STANDARD --service-account=63064824997-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/trace.append --tags=http-server --create-disk=auto-delete=yes,boot=yes,device-name=myvm1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20240720,mode=rw,size=10,type=projects/golden-sentry-430013-j5/zones/asia-east1-c/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
+    2  clear
+    3  gcloud compute instances create myvm1 --project=industrial-glow-437012-i4 --zone=asia-east1-c --machine-type=e2-medium --network-interface=network-tier=PREMIUM,stack-type=IPV4_ONLY,subnet=default --maintenance-policy=MIGRATE --provisioning-model=STANDARD --service-account=964926729963-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/trace.append --tags=http-server --create-disk=auto-delete=yes,boot=yes,device-name=myvm1,image=projects/ubuntu-os-cloud/global/images/ubuntu-2204-jammy-v20240720,mode=rw,size=10,type=projects/golden-sentry-430013-j5/zones/asia-east1-c/diskTypes/pd-balanced --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring --labels=goog-ec-src=vm_add-gcloud --reservation-affinity=any
+    4  dcloud compute list inatances
+    5  gcloud compute list inatances
+    6  gcloud compute instances list
+    7  so now we have 2 vm's running for ease, we will rename our gui version. i donclear
+    8  clear
+    9  clear
+   10  ls
+   11  gsutil ls gs://
+   12  gsutil cp hello.htm gs://lakshika-bucket/
+   13  gsutil cp hello.html gs://lakshika-bucket/
+   14  gsutil cp helloworld.htm gs://lakshika-bucket/
+   15  gsutil cp Hello world.htm gs://lakshika-bucket/
+   16  ls
+   17  gsutil ls gs://
+   18  ls
+   19  gsutil ls gs://
+   20  gsutil cp Hello world.htm gs://lakshika-bucket
+   21  ls
+   22  gsutil cp Test.htm gs://lakshika-bucket .
+   23  gsutil cp Test.htm gs://lakshika-bucket
+   24  gsutil cp -r Test_files gs://lakshikabucket
+   25  gsutil cp -r Test_files gs://lakshika-bucket
+   26  sudo apt install mysql-client -y
+   27  mysql -h 35.221.243.6 -u root -p
+   28  show databases;
+   29  show database;
+   30  clear
+   31  mysql -h 35.221.243.6 -u root -p
+   32  gcloud sql connect mydb --user=root --quiet
+   33  mysql -h 10.43.176.4 -u root -p
+   34  show databases;
+   35  clear
+   36  mysql -h 10.43.176.4 -u root -p
+   37  gcloud compute forwarding-rules describe http-content-rule --global --format="get(IPAddress)"
+   38  nano delete.sh
+   39  chmod +x delete.sh 
+   40  ./delete.sh 
+   41  nano create-assignment.sh
+   42  chmod +x create-assignment.sh 
+   43  ./create-assignment.sh 
+   44  ./delete.sh 
+   45  gcloud compute network create myvpc1 --subnet-mode=custom
+   46  gcloud compute networks create myvpc1 --subnet-mode=custom
+   47  gcloud compute networks create myvpc2 --subnet-mode=custom
+   48  gcloud compute networks create dmjvpc --subnet-mode=custom
+   49  gcloud compute networks subnets create myvpc1-subnet --network=myvpc1 --region=asia-east1 --range=10.0.1.0/24
+   50  gcloud compute networks subnets create myvpc2-subnet --network=myvpc2 --region=asia-east1 --range=192.168.1.0/24
+   51  gcloud compute subnets create subnet dmjvpc --network=dmjvpc --region=asia-east1 --range=10.10.0.0/24
+   52  gcloud compute networks subnets create subnet dmjvpc --network=dmjvpc --region=asia-east1 --range=10.10.0.0/24
+   53  gcloud compute networks subnets create dmjvpc-subnet --network=dmjvpc --region=asia-east1 --range=10.10.0.0/24
+   54  gcloude compute networks peering create myvpc2-to-myvpc1 --network=myvpc2 --peer-network=myvpc1
+   55  gcloud compute networks peering create myvpc2-to-myvpc1 --network=myvpc2 --peer-network=myvpc1
+   56  gcloud compute networks peerings create myvpc2-to-myvpc1 --network=myvpc2 --peer-network=myvpc1 
+   57  gcloud compute networks peerings create myvpc1-to-myvpc2 --network=myvpc1 --peer-network=myvpc2
+   58  gcloud compute networks create djt --subnet-mode=custom
+   59  gcloud compute networks subnets create djt-subnet --region=asia-east1 --range=10.0.5.0/24
+   60  gcloud compute networks create subnets djt-subnet --network=djt --region=asia-east1 range=10.0.5.0/24
+   61  gcloud compute networks subnets create djt-subnet --network=djt --region=asia-east1 range=10.0.5.0/24
+   62  gcloud compute networks subnets create djt-subnet --network=djt --region=asia-east1 --range=10.0.5.0/24
+   63  gcloud compute networks peerings create dmj-to-djt --network=dmj --peer-network=djt
+   64  gcloud compute networks peerings create dmj-to-djt --network=dmjvpc --peer-network=djt
+   65  gcloud compute networks peerings create djt-to-dmj --network=djt --peer-network=dmjvpc
+   66  gcloud compute firewall-rules create  myvpc1-allow-icmp --network=myvpc1 --allow=icmp
+   67  gcloud compute firewall-rules create myvpc1-allow-ssh --network=myvpc1 --allow=tcp22
+   68  gcloud compute firewall-rules create myvpc1-allow-ssh --network=myvpc1 --allow=tcp=22
+   69  gcloud compute firewall-rules create myvpc1-allow-ssh --network=myvpc1 --allow=tcp:22
+   70  gcloud compute firewall-rules create myvpc1-allow-mysql --network=myvpc1 --allow=tcp:80
+   71  gcloud compute firewall-rules create myvpc1-allow-http --network=myvpc1 --allow=tcp:80
+   72  gcloud compute firewall-rules create myvpc2-allow-mysql --network=myvpc2 --allow=tcp:3306
+   73  gcloud compute firewall-rules create djt-allow-fraud --network=djt --allow=tcp:420
+   74  ls 'lh
+   75  quit
+   76  exit
+   77  ls -lh
+   78  cat << 'EOF' > mysql-setup.sh
+   79  #!/bin/bash
+   80  # Update system and install MariaDB server
+   81  sudo apt update
+   82  sudo apt install -y mariadb-server
+   83  sudo systemctl start mariadb
+   84  # Configure MariaDB to listen on all interfaces
+   85  sudo sed -i 's/^bind-address\s*=.*$/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
+   86  sudo systemctl restart mariadb
+   87  # Allow time for MariaDB to fully start
+   88  sleep 5
+   89  # Set up MariaDB root user, clear unnecessary users/databases, and grant remote access
+   90  sudo mysql <<SQL
+   91  ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+   92  FLUSH PRIVILEGES;
+   93  DELETE FROM mysql.user WHERE User='';
+   94  DROP DATABASE IF EXISTS test;
+   95  DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+   96  FLUSH PRIVILEGES;
+   97  GRANT ALL PRIVILEGES ON example_db.* TO 'root'@'10.0.1.%' IDENTIFIED BY '12345678';
+   98  FLUSH PRIVILEGES;
+   99  SQL
+  100  # Create database, table, and insert initial data
+  101  sudo mysql -uroot -p12345678 <<SQL
+  102  CREATE DATABASE example_db;
+  103  USE example_db;
+  104  CREATE TABLE users (
+  105      id INT AUTO_INCREMENT PRIMARY KEY,
+  106      name VARCHAR(50),
+  107      email VARCHAR(50),
+  108      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  109  );
+  110  INSERT INTO users (name, email) VALUES
+  111  ('Lakshika', 'lakshika@dmj.one'),
+  112  ('dmj', 'contact@dmj.one'),
+  113  ('Kycee', 'kycee@nwu.tw'),
+  114  ('Aarav', 'aarav@gmail.com'),
+  115  ('Vivaan', 'vivaan@dmj.one'),
+  116  ('Diya', 'diya@edu.in'),
+  117  ('Saanvi', 'saanvi@india.org'),
+  118  ('Advika', 'advika@service.in'),
+  119  ('Mei', 'mei@taipei.tw'),
+  120  ('Jia', 'jia@dmj.one'),
+  121  ('Rui', 'rui@nwu.tw'),
+  122  ('Shan', 'shan@twmail.com'),
+  123  ('Wei', 'wei@taiwan.com'),
+  124  ('Anvi', 'anvi@edu.in'),
+  125  ('Aryan', 'aryan@inmail.com'),
+  126  ('Yu', 'yu@taipei.tw'),
+  127  ('Chen', 'chen@service.tw'),
+  128  ('Rakesh', 'rakesh@inmail.com'),
+  129  ('Suhani', 'suhani@edu.org'),
+  130  ('Nisha', 'nisha@dmj.in'),
+  131  ('Vikram', 'vikram@domain.in'),
+  132  ('Ting', 'ting@taipei.com.tw'),
+  133  ('Lin', 'lin@dmj.tw');
+  134  SQL
+  135  EOF
+  136  ls -lh
+  137  exit
+  138  nano create-assignment.sh 
+  139  rm create-assignment.sh 
+  140  nano create-assignment.sh
+  141  cat << EOF > http-server-setup.sh
+  142  #!/bin/bash
+  143  sudo apt update
+  144  sudo apt install -y apache2 php php-mysql
+  145  sudo systemctl start apache2
+  146  sudo mv /var/www/html/index.html /var/www/html/index.html.bak
+  147  # Create PHP file to connect to the MariaDB database and display data in Bootstrap cards
+  148  cat << 'PHP_EOF' | sudo tee /var/www/html/index.php
+  149  <?php
+  150  \$servername = "$DATABASE_VM_IP";
+  151  \$username = "root";
+  152  \$password = "12345678";
+  153  \$dbname = "d1";
+  154  \$conn = new mysqli(\$servername, \$username, \$password, \$dbname);
+  155  if (\$conn->connect_error) {
+  156      die("Connection failed: " . \$conn->connect_error);
+  157  }
+  158  \$sql = "SELECT id, name FROM t1";
+  159  \$result = \$conn->query(\$sql);
+  160  if (\$result->num_rows > 0) {
+  161      while(\$row = \$result->fetch_assoc()) {
+  162          echo '\$row["id"] \$row["name"];                                        
+  163      }
+  164  } else {
+  165      echo 'Nothing found';
+  166  }
+  167  \$conn->close();
+  168  ?>
+  169  PHP_EOF
+  170  EOF
+  171  cat http
+  172  cat http-server-setup.sh 
+  173  ls -lh
+  174  nano create-assignment.sh
+  175  chmod +x create-assignment.sh 
+  176  gcloud compute instances create database-vm
+  177  gcloud compute instances create database-vm --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet --metadata-from-file startup-script=mysql-setup.sh
+  178  gcloud compute instance delete database-vm
+  179  gcloud compute instances delete database-vm
+  180  gcloud compute instances create database-vm --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc2-subnet --metadata-from-file startup-script=mysql-setup.sh
+  181  nano http-server-setup.sh 
+  182  gcloud compute instances create http-server-1 --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet --metadata-from-file startup-script=http-server-setup.sh
+  183  gcloud compute instances create http-server-2 --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet --metadata-from-file startup-script=http-server-setup.sh
+  184  gcloud compute networks create harris --subnet-mode=custom
+  185  gcloud compute networks subnets delete djt-subnet
+  186  gcloud compute networks subnets delete djt-subnet --quiet
+  187  gcloud compute networks subnets delete djt-subnet --region=asia-east1 --quiet
+  188  gcloud networks delete djt --quiet --region=asia-east1
+  189  gcloud compute networks delete djt --quiet --region=asia-east1
+  190  gcloud compute networks delete djt --region=asia-east1 --quiet
+  191  gcloud compute networks delete djt  --quiet
+  192  rm http-server-setup.sh 
+  193  nano http-server-setup.sh
+  194  cat << EOF > http-server-setup.sh
+  195  #!/bin/bash
+  196  sudo apt update
+  197  sudo apt install -y apache2 php php-mysql
+  198  sudo systemctl start apache2
+  199  sudo mv /var/www/html/index.html /var/www/html/index.html.bak
+  200  # Create PHP file to connect to the MariaDB database and display data in Bootstrap cards
+  201  cat << 'PHP_EOF' | sudo tee /var/www/html/index.php
+  202  <?php
+  203  \$servername = "$DATABASE_VM_IP";
+  204  \$username = "root";
+  205  \$password = "12345678";
+  206  \$dbname = "d1";
+  207  \$conn = new mysqli(\$servername, \$username, \$password, \$dbname);
+  208  if (\$conn->connect_error) {
+  209      die("Connection failed: " . \$conn->connect_error);
+  210  }
+  211  \$sql = "SELECT id, name FROM t1";
+  212  \$result = \$conn->query(\$sql);
+  213  if (\$result->num_rows > 0) {
+  214      while(\$row = \$result->fetch_assoc()) {
+  215          echo \$row["id"] . " " . \$row["name"] . "<br>";
+  216      }
+  217  } else {
+  218      echo "Nothing found";
+  219  }
+  220  \$conn->close();
+  221  ?>
+  222  PHP_EOF
+  223  EOF
+  224  cat http-server-setup.sh 
+  225  ls -lh
+  226  gcloud compute firewall-rules create myvpc2-allow-ssh --network=myvpc2 --allow=tcp:22
+  227  sudo mysql -uroot -p12345678
+  228  sudo mysql -uroot -p
+  229  sudo mysql <<SQL
+  230  ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+  231  FLUSH PRIVILEGES;
+  232  DELETE FROM mysql.user WHERE User='';
+  233  DROP DATABASE IF EXISTS test;
+  234  DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+  235  FLUSH PRIVILEGES;
+  236  GRANT ALL PRIVILEGES ON example_db.* TO 'root'@'10.0.1.%' IDENTIFIED BY '12345678';
+  237  FLUSH PRIVILEGES;
+  238  SQL
+  239  sudo systemctl restart mariadb
+  240  nano mysql-setup.sh 
+  241  nano http-server-setup.sh 
+  242  gcloud compute instances create test --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet  --metadata-from-file startup-script=http-server-setup.sh
+  243  nano mysql-setup.sh 
+  244  rm mysql-setup.sh 
+  245  cat << 'EOF' > mysql-setup.sh
+  246  #!/bin/bash
+  247  sudo apt update
+  248  sudo apt install -y mariadb-server
+  249  sudo sed -i 's/^bind-address\s*=.*$/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
+  250  sudo systemctl start mariadb
+  251  sudo mysql <<SQL
+  252  ALTER USER 'root'@'localhost' IDENTIFIED BY '12345678';
+  253  GRANT ALL PRIVILEGES ON d1.* TO 'root'@'10.0.1.%' IDENTIFIED BY '12345678';
+  254  FLUSH PRIVILEGES;
+  255  SQL
+  256  sudo mysql -uroot -p12345678 <<SQL
+  257  CREATE DATABASE IF NOT EXISTS d1;
+  258  USE d1;
+  259  CREATE TABLE IF NOT EXISTS t1 (
+  260      id INT AUTO_INCREMENT PRIMARY KEY,
+  261      name VARCHAR(50)
+  262  );
+  263  INSERT INTO t1 (name) VALUES
+  264  ('Lakshika'),
+  265  ('dmj');
+  266  SQL
+  267  EOF
+  268  cat mysql-setup.sh 
+  269  gcloud compute instances create database-vm --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc2-subnet  --metadata-from-file startup-script=mysql-setup.sh
+  270  cat mysql-setup.sh 
+  271  cat http-server-setup.sh 
+  272  gcloud compute instances-groups unmanaged create http-server-group --zone=asia-east1
+  273  gcloud compute instance-groups http-server-group --zone=asia-east1
+  274  gcloud compute instance-groups unmanaged create  http-server-group --zone=asia-east1
+  275  gcloud compute instance-groups unmanaged create  http-server-group --zone=asia-east1-a
+  276  gcloud compute instance-groups unmanaged add-instance http-server-group --zone=asia-east1-a --instances=http-server-1 --instances=http-server-2
+  277  gcloud compute instance-groups unmanaged add-instances http-server-group --zone=asia-east1-a --instances=http-server-1 --instances=http-server-2
+  278  gcloud compute health-checks http http-basic-check --port:80 
+  279  gcloud compute health-checks create http http-basic-check --port80
+  280  gcloud compute health-checks create http http-basic-check --port:80
+  281  gcloud compute health-checks create http http-basic-check --port 80
+  282  gcloud compute backend-services create http-backend-service --protocol=HTTP --health-checks=http-basic-check --global 
+  283  nano create-assignment.sh 
+  284  nano http-server-setup.sh 
+  285  clear
+  286  gcloud compute networks create myvpc1 --subnets=custom
+  287  gcloud compute networks create myvpc1 --subnet-mode=custom
+  288  gcloud compute networks create myvpc2 --subnet-mode=custom
+  289  gcloud compute networks subnets create myvpc1-subnet --network=myvpc1 --region=asia-east1 --range=10.0.1.0/24 
+  290  gcloud compute networks subnets create myvpc2-subnet --network=myvpc2 --region=asia-east1 --range=192.168.1.0/24
+  291  gcloud compute networks peerings create myvpc1-to-myvpc2 --network=myvpc1 --peer-network=myvpc2
+  292  gcloud compute networks peerings create myvpc2-to-myvpc1 --network=myvpc2 --peer-network=myvpc1
+  293  gcloud compute firewall-rules create myvpc1-allow-icmp --network=myvpc1 --allow=icmp
+  294  gcloud compute firewall-rules create myvpc1-allow-ssh --network=myvpc1 --allow=tcp:22
+  295  gcloud compute firewall-rules create myvpc1-allow-http --network=myvpc1 --allow=tcp:80
+  296  gcloud compute firewall-rules create myvpc2-allow-mysql --network=myvpc2 --allow=tcp:3306
+  297  gcloud compute firewall-rules create myvpc2-allow-ssh --network=myvpc2 --allow=tcp:22
+  298  gcloud compute instances create database-vm --zone=asia-east1-a --machine-type=e2-micro --subnets=myvpc2-subnet --metadata-from-file startup-script=mysql-setup.sh
+  299  gcloud compute instances create database-vm --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc2-subnet --metadata-from-file startup-script=mysql-setup.sh
+  300  gcloud compute instances create http-server-1 --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet --metadata-from-file startup-script=http-server-setup.sh 
+  301  gcloud compute instances create http-server-2 --zone=asia-east1-a --machine-type=e2-micro --subnet=myvpc1-subnet --metadata-from-file startup-script=http-server-setup.sh 
+  302  clear
+  303  gcloud compute instance-groups unmanaged create http-servers-group --zone=asia-east1-a 
+  304  gcloud compute instance-groups unmanaged add-instances=http-servers-group --zone=asia-east1-a --instances=http-server-1 --instances=http-server-2  
+  305  gcloud compute instance-groups unmanaged add-instances http-servers-group --zone=asia-east1-a --instances=http-server-1 --instances=http-server-2  
+  306  gcloud compute health-checks create http http-basic-check --port 80
+  307  gcloud compute backend-services create http-backend-service --protocol=HTTP --health-checks http-basic-check --global
+  308  gcloud compute backend-services add-backend http-backend-service --instance-group=http-servers-group --instance-group-zone=asia-east1-a --global
+  309  gcloud compute url-maps create http-url-map --default-service=http-backend-service
+  310  gcloud compute target-http-proxies create http-lb-proxy --url-map=http-url-map
+  311  gcloud compute forwarding-rules create http-content-rule --global --target-http-proxy=http-lb-proxy --port=80
+  312  gcloud compute forwarding-rules create http-content-rule --global --target-http-proxy=http-lb-proxy --ports=80
+  313  gcloud compute forwarding-rules describe http-content-rule --global --format="get(IPAddress)"
+  314  nano filename.ext
+  315  cat filename.ext 
+  316  nano filename.ext
+  317  cat filename.ext
+  318  nano filename.ext
+  319  cat filename.ext
+  320  ls
+  321  cat mysql-setup.sh
+  322  cat http-server-setup.sh
+  323  ls
+  324  nano mysql-setup.sh
+  325  cat mysql.sh
+  326  nano mysql-setup.sh
+  327  curl -o /dev/null -s -w 'Total: %{time_total}\n' http://34.81.137.102/
+  328  curl -o /dev/null -s -w 'Total: %{time_total}\n' http://35.232.237.210/
+  329  {   "name": "Hello World"; }
+  330  curl https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1?name=lakshika
+  331  curl -X POST   -H "Content-Type: application/json"   -d '{"name": "Hello World"}'   https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1
+  332  curl -X POST   -H "Contclearent-Type: application/json"   -d '{"name": "Hello World"}'   https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1
+  333  clear
+  334  curl-m 70  -X POST   -H "Contclearent-Type: application/json"   -d '{"name": "Hello World"}'   https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1
+  335  curl -m 70  -X POST   -H "Contclearent-Type: application/json"   -d '{"name": "Hello World"}'   https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1
+  336  clear
+  337  curl https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1?name=lakshika \n
+  338  clear
+  339  curl https://asia-east1-industrial-glow-437012-i4.cloudfunctions.net/function-1?name=lakshika
+  340  mkdir test_iris
+  341  cd test_iris
+  342  git clone https://github.com/saedhussain/gcp_serverless_ml.git
+  343  ls gcp_serverless_ml
+  344  ls
+  345  cd test_iris/
+  346  ls
+  347  ls -lh
+  348  cat Iris_http_cloud_func
+  349  cd Iris_http_cloud_func
+  350  ls -lh
+  351  python3 -- version
+  352  sir numpy install krne ke naad ek or kuch install kra hai
+  353  apt-get update 
+  354  sudo apt-get update 
+  355  sudo apt install python3 python3-pip
+  356  python3 --version
+  357  pip install -m requirements.txt 
+  358  pip install -r requirements.txt 
+  359  sudo apt install setuptools
+  360  pip install --upgrade setuptools wheel
+  361  sudo apt install setuptools
+  362  pip install -r requirements.txt 
+  363  sudo apt install build-essential 
+  364  pip install -r requirements.txt 
+  365  sudo apt install python3-distutils
+  366  sudo apt update
+  367  sudo apt install build-essential python3-dev python3-distutils
+  368  curl -m 70 -X POST https://us-central1-industrial-glow-437012-i4.cloudfunctions.net/function-x -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{ "features": [6,3,5,2] }'
+  369  clear
+  370  curl -m 70 -X POST https://us-central1-industrial-glow-437012-i4.cloudfunctions.net/function-x -H "Authorization: bearer $(gcloud auth print-identity-token)" -H "Content-Type: application/json" -d '{ "features": [6,3,5,2] }'
+  371  clear
+  372  ls
+  373  gcloud sql connect mydb --user=root
+  374  clear
+  375  cat README-Cloudshell.txt
+  376  ls
+  377  gcloud sql databases create testdb --instance =mydb,-i mydb;
+  378  gcloud sql databases create testdb --instance =mydb,-i mydb
+  379  clear
+  380  gcloud sql databases create testdb --instance=mydb, -i mydb
+  381  clear 
+  382  gcloud sql databases create testdb --instance=mydb, -i mydb
+  383  ;
+  384  gcloud sql databases create testdb --instance=mydb
+  385  clear
+  386  gcloud sql databases create testdb --instance=mydb;
+  387  gcloud auth list
+  388  gcloud projects get-iam-policy <PROJECT_ID>
+  389  clear
+  390  gcloud auth list
+  391  gcloud config set account lakshikaa64@gmail.com
+  392  gcloud sql databases create testdb --instance=mydb
+  393  clear
+  394  ls -lh
+  395  gcloud app deploy
+  396  ls
+  397  cd flaskyaml/
+  398  ls
+  399  cat requirements.txt 
+  400  cat main.py
+  401  ls
+  402  mv app.py main.py
+  403  cat main.py
+  404  ls
+  405  gcloud app deploy
+  406  python train_model.py 
+  407  pip install -r requirements.txt 
+  408  python train_model.py 
+  409  python client.py
+  410  curl http://10.88.0.4:8080
+  411  python main.py  
+  412  gcp app deploy
+  413  gcloud app deploy
+  414  history
+  415  history > history-lakshika.txt

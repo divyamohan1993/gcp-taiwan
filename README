@@ -245,8 +245,8 @@ if($result->num_rows>0){  // if the returned results have rows more than 0
     }
 } else {
     echo "0 record";  // else it will say 0 record
-} 
-?> 
+}
+?>
 ```
 
 #### Copy the Files from instance to Buket directly.
@@ -254,4 +254,4 @@ if($result->num_rows>0){  // if the returned results have rows more than 0
 gsutil cp filename.txt gs://bucket-name
 ```
 
-Rest in specific folders. View them. 
+Rest in specific folders. View them there.

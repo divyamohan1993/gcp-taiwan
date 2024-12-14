@@ -6,7 +6,7 @@
 <p align="center"><strong>Prepared by Lakshika Tanwar</strong></p>
 
 
-**Instructor:** Prof. Kē Zhìhēng (柯志亨)
+**Instructor:** Prof. Kē Zhìhēng (柯志亨)  
 **University:** National Quemoy University, Kinmen, Taiwan  
 **Course Duration:** August 2024 - December 2024  
 

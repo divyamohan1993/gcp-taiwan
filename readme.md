@@ -1,14 +1,15 @@
 <div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/512px-Google_Cloud_logo.svg.png" alt="Google Cloud Logo" width="200">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGS6WsJhJZyuf4iCT_DriUYyl7EYWjUyGhIg&s" alt="NQU Logo" width="200">
 </div>
+
+--- 
 
 <h1 align="center">Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan</h1>
 
 <p align="center"><strong>Prepared by Lakshika Tanwar</strong></p>
 
-# Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan  
-**Prepared by Lakshika Tanwar**  
+<!-- # Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan  
+**Prepared by Lakshika Tanwar**   -->
 
 ---
 
@@ -77,3 +78,7 @@ Special thanks to the instructor, faculty members, and peers for their guidance 
 ---
 
 _This repository showcases the academic progress in learning and implementing Google Cloud Platform concepts._  
+
+<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/512px-Google_Cloud_logo.svg.png" alt="Google Cloud Logo" width="200">    
+</div>

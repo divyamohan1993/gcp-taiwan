@@ -1,29 +1,34 @@
-<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGS6WsJhJZyuf4iCT_DriUYyl7EYWjUyGhIg&s" alt="NQU Logo" width="200">
+<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 50px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/512px-Google_Cloud_logo.svg.png" alt="Google Cloud Logo" width="300">    
 </div>
 
---- 
-
 <h1 align="center">Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan</h1>
-
 <p align="center"><strong>Prepared by Lakshika Tanwar</strong></p>
 
-<!-- # Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan  
-**Prepared by Lakshika Tanwar**   -->
-
----
 
 **Instructor:** [Instructor Name]  
 **University:** National Quemoy University, Kinmen, Taiwan  
 **Course Duration:** August 2024 - December 2024  
 
----
 
 ## Introduction  
 
 This repository serves as a comprehensive collection of notes, assignments, and project work for the **Google Cloud Platform (GCP)** course at **National Quemoy University**. Each session includes practical implementations, hands-on activities, and in-depth concepts to build foundational knowledge and real-world skills in Google Cloud services.  
 
----
+
+## Acknowledgment  
+
+This project is made possible through the academic collaboration between:  
+
+<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 50px;">
+    <img src="https://shooliniuniversity.com/assets/images/logo.png" alt="Shoolini University Logo" width="150">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGS6WsJhJZyuf4iCT_DriUYyl7EYWjUyGhIg&s" alt="NQU Logo" width="80">
+</div>
+
+
+
+<p align="center"><em>Special thanks to Shoolini University for their academic foundation and support.</em></p>
+
 
 ## Table of Contents  
 
@@ -44,7 +49,6 @@ This repository serves as a comprehensive collection of notes, assignments, and 
 15. **Pending Topics**  
 16. **Presentation**  
 
----
 
 ## Course Overview  
 
@@ -59,9 +63,8 @@ The **Google Cloud Platform (GCP)** course introduces essential cloud concepts a
 - **Cloud Run and Functions**  
 - **App Engine and Serverless Frameworks**  
 
-Through hands-on labs and project work, students gain practical experience to address challenges in cloud-based environments.
+Through hands-on labs and project work, students gain practical experience to address challenges in cloud-based environments.  
 
----
 
 ## Contribution  
 
@@ -71,14 +74,5 @@ This repository is prepared by **Lakshika Tanwar** for academic submission to **
 
 ---
 
-## Acknowledgment  
+<p align="center"><em>This repository showcases the academic progress in learning and implementing Google Cloud Platform concepts.</em></p>
 
-Special thanks to the instructor, faculty members, and peers for their guidance and encouragement throughout the course.  
-
----
-
-_This repository showcases the academic progress in learning and implementing Google Cloud Platform concepts._  
-
-<div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Google_Cloud_logo.svg/512px-Google_Cloud_logo.svg.png" alt="Google Cloud Logo" width="200">    
-</div>

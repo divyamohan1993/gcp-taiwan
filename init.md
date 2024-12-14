@@ -2,9 +2,7 @@
 - Project number: 9649******63
 - Project ID: industrial-glow-******-i4
 
-We then explored various services provided by the Google Cloud.
-
-
+Exploration and learning of various services provided by the Google Cloud.
 
 # Compute Engine - VM Instance - By Lakshika Tanwar
 **Prerequisite:**
@@ -253,5 +251,3 @@ if($result->num_rows>0){  // if the returned results have rows more than 0
 ```
 gsutil cp filename.txt gs://bucket-name
 ```
-
-Rest in specific folders. View them there.

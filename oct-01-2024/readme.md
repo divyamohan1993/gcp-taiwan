@@ -83,6 +83,15 @@ gcloud compute instances create apache-dynv6-vm \
     --boot-disk-size=10GB
 ```
 
+or add it manually.
+
+```
+apt update
+apt -y install apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><p>Linux startup script added directly. $(hostname -f) </p></body></html>
+```
+
 ---
 
 ## **Step 2: Allow HTTP Traffic**

@@ -44,10 +44,12 @@ This project is made possible through the academic collaboration between:
 10. [Nov-19-2024 - Enable Cloud NAT and Set Up Monitoring and Alerting](nov-19-2024/readme.md)  
 11. [Dec-03-2024 - Google Cloud Run Functions: Step-by-Step Guide Using the GUI](dec-03-2024/readme.md)  
 12. [Dec-10-2024 - Deploy Cloud Run Services and App Engine Applications](dec-10-2024/readme.md)  
-13. [GCP Console Support and Code Files](gcp-files/readme.md)  
-14. [History of Commands Run on Console](history-lakshika.txt)  
-15. **Pending Topics**  
-16. **Presentation**  
+13. [Dec-17-2024 - Building, Containerizing, and Deploying a ML Model on GCP with Terraform](dec-17-2024/readme.md)  
+14. [GCP Console Support and Code Files](gcp-files/readme.md)  
+15. [History of Commands Run on Console](history-lakshika.txt)  
+16. [**Presentation**](https://docs.google.com/presentation/d/1fOyk1u_W6WOZHB8dqy-Klr-LhW-vA8i0gBp3MWXRWWs/edit?usp=sharing)
+
+
 
 
 ## Course Overview  

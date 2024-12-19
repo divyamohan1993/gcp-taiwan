@@ -47,7 +47,7 @@ This project is made possible through the academic collaboration between:
 13. [Dec-17-2024 - Building, Containerizing, and Deploying a ML Model on GCP with Terraform](dec-17-2024/readme.md)  
 14. [GCP Console Support and Code Files](gcp-files/readme.md)  
 15. [History of Commands Run on Console](history-lakshika.txt)  
-16. [**Presentation**](https://docs.google.com/presentation/d/1fOyk1u_W6WOZHB8dqy-Klr-LhW-vA8i0gBp3MWXRWWs/edit?usp=sharing)
+16. [Presentation](https://docs.google.com/presentation/d/1fOyk1u_W6WOZHB8dqy-Klr-LhW-vA8i0gBp3MWXRWWs/edit?usp=sharing)
 
 
 

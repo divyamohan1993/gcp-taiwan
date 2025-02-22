@@ -3,7 +3,7 @@
 </div>
 
 <h1 align="center">Google Cloud Platform (GCP) - Classes at National Quemoy University, Kinmen, Taiwan</h1>
-<p align="center"><strong>Prepared by Lakshika Tanwar</strong></p>
+<p align="center"><strong>Prepared by Lakshika Tanwar and Divya Mohan</strong></p>
 
 
 **Instructor:** Prof. Chih-Heng Ke (Henry) (柯志亨)  
